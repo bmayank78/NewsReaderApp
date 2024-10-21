@@ -30,7 +30,7 @@ struct NewsModelDTO: Decodable, Equatable, Identifiable {
     let title: String?
     let image_url: String?
     let link: String?
-    let description: String?
+    let summary: String?
     let pubDate: String?
-    let category: [String]?
+    let category: String?
 }

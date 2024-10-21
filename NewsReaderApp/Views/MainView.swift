@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct MainView: View {
-    // Reference the coordinator as a state object
-    // @StateObject var coordinator = NewsAppCoordinator()
-
+    
     @ObservedObject var coordinator: NewsAppCoordinator
     
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
             HomeView(dependencies: coordinator.appDependencies)
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label(StringConstants.MainViewConstants.bottomBarHomeTitle, systemImage: "house")
                 }
-                .tag(NAppDependencies.Tab.home)
+                .tag(BottomTabBar.home)
 
             BookMarkView()
                 .tabItem {
-                    Label("Bookmark", systemImage: "bookmark")
+                    Label(StringConstants.MainViewConstants.bottomBarBookMarkTitle, systemImage: "bookmark")
                 }
-                .tag(NAppDependencies.Tab.bookmark)
+                .tag(BottomTabBar.bookmark)
         }
     }
 }

@@ -19,7 +19,7 @@
 		0467F8BA2CC5122800F153CA /* BookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B92CC5122800F153CA /* BookMarkView.swift */; };
 		0467F8BE2CC512E300F153CA /* NAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8BD2CC512E300F153CA /* NAppDependencies.swift */; };
 		0467F8C02CC5161700F153CA /* NewsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8BF2CC5161700F153CA /* NewsCellView.swift */; };
-		0467F8C22CC516F200F153CA /* DetialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8C12CC516F200F153CA /* DetialView.swift */; };
+		0467F8C22CC516F200F153CA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8C12CC516F200F153CA /* DetailView.swift */; };
 		0467F8C52CC5176700F153CA /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8C42CC5176700F153CA /* ActivityIndicatorView.swift */; };
 		0467F8C82CC51B3A00F153CA /* FetchNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8C72CC51B3A00F153CA /* FetchNewsViewModel.swift */; };
 		0467F8CB2CC51D0800F153CA /* FetchNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8CA2CC51D0800F153CA /* FetchNewsUseCase.swift */; };
@@ -28,11 +28,17 @@
 		0467F8D32CC5229A00F153CA /* FetchNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8D22CC5229A00F153CA /* FetchNewsService.swift */; };
 		0467F8D82CC5232B00F153CA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8D72CC5232B00F153CA /* DataManager.swift */; };
 		0467F8DA2CC5236B00F153CA /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8D92CC5236B00F153CA /* EndPoint.swift */; };
-		0467F8DC2CC5256400F153CA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DB2CC5256400F153CA /* Networking.swift */; };
 		0467F8DE2CC526C100F153CA /* NErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DD2CC526C100F153CA /* NErrors.swift */; };
-		0467F8E02CC52EF600F153CA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DF2CC52EF600F153CA /* HTTPClient.swift */; };
+		0467F8E02CC52EF600F153CA /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */; };
 		0467F8E22CC56FA400F153CA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E12CC56FA400F153CA /* WebView.swift */; };
 		0467F8E42CC5704000F153CA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E32CC5704000F153CA /* ActivityViewController.swift */; };
+		04FF51FB2CC6BC0100B6F83B /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF51FA2CC6BC0100B6F83B /* StringConstants.swift */; };
+		04FF51FD2CC6D15900B6F83B /* PillTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF51FC2CC6D15900B6F83B /* PillTextView.swift */; };
+		04FF51FF2CC6D41E00B6F83B /* PopoverListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF51FE2CC6D41E00B6F83B /* PopoverListView.swift */; };
+		04FF52022CC6DBCC00B6F83B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FF52012CC6DBCC00B6F83B /* CoreData.framework */; };
+		04FF52052CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04FF52032CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodeld */; };
+		04FF52092CC6DD1F00B6F83B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF52082CC6DD1F00B6F83B /* CoreDataStack.swift */; };
+		04FF52102CC6DFB800B6F83B /* BookmarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF520F2CC6DFB800B6F83B /* BookmarkListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +74,7 @@
 		0467F8B92CC5122800F153CA /* BookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkView.swift; sourceTree = "<group>"; };
 		0467F8BD2CC512E300F153CA /* NAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAppDependencies.swift; sourceTree = "<group>"; };
 		0467F8BF2CC5161700F153CA /* NewsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellView.swift; sourceTree = "<group>"; };
-		0467F8C12CC516F200F153CA /* DetialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetialView.swift; sourceTree = "<group>"; };
+		0467F8C12CC516F200F153CA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0467F8C42CC5176700F153CA /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		0467F8C72CC51B3A00F153CA /* FetchNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNewsViewModel.swift; sourceTree = "<group>"; };
 		0467F8CA2CC51D0800F153CA /* FetchNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNewsUseCase.swift; sourceTree = "<group>"; };
@@ -77,11 +83,17 @@
 		0467F8D22CC5229A00F153CA /* FetchNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNewsService.swift; sourceTree = "<group>"; };
 		0467F8D72CC5232B00F153CA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0467F8D92CC5236B00F153CA /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		0467F8DB2CC5256400F153CA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		0467F8DD2CC526C100F153CA /* NErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NErrors.swift; sourceTree = "<group>"; };
-		0467F8DF2CC52EF600F153CA /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0467F8E12CC56FA400F153CA /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0467F8E32CC5704000F153CA /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		04FF51FA2CC6BC0100B6F83B /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		04FF51FC2CC6D15900B6F83B /* PillTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTextView.swift; sourceTree = "<group>"; };
+		04FF51FE2CC6D41E00B6F83B /* PopoverListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverListView.swift; sourceTree = "<group>"; };
+		04FF52012CC6DBCC00B6F83B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04FF52042CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsReaderApp.xcdatamodel; sourceTree = "<group>"; };
+		04FF52082CC6DD1F00B6F83B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		04FF520F2CC6DFB800B6F83B /* BookmarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FF52022CC6DBCC00B6F83B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +129,7 @@
 				0467F89A2CC4F18100F153CA /* NewsReaderAppTests */,
 				0467F8A42CC4F18100F153CA /* NewsReaderAppUITests */,
 				0467F8882CC4F17E00F153CA /* Products */,
+				04FF52002CC6DBCC00B6F83B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,7 +155,9 @@
 				0467F8CC2CC51F0E00F153CA /* Repository */,
 				0467F8D42CC5229F00F153CA /* Service */,
 				0467F8D12CC5219100F153CA /* Models */,
-				0467F8D52CC522EA00F153CA /* Utilities */,
+				04FF52062CC6DC0900B6F83B /* Data */,
+				04FF51F92CC6BBE400B6F83B /* Constants */,
+				0467F8D62CC522FB00F153CA /* Networking */,
 				0467F8C32CC5175300F153CA /* CommonViews */,
 				0467F88E2CC4F18000F153CA /* Assets.xcassets */,
 				0467F8902CC4F18000F153CA /* Preview Content */,
@@ -181,7 +197,7 @@
 				0467F8B72CC50E9000F153CA /* HomeView.swift */,
 				0467F8B92CC5122800F153CA /* BookMarkView.swift */,
 				0467F8BF2CC5161700F153CA /* NewsCellView.swift */,
-				0467F8C12CC516F200F153CA /* DetialView.swift */,
+				0467F8C12CC516F200F153CA /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +224,8 @@
 				0467F8C42CC5176700F153CA /* ActivityIndicatorView.swift */,
 				0467F8E12CC56FA400F153CA /* WebView.swift */,
 				0467F8E32CC5704000F153CA /* ActivityViewController.swift */,
+				04FF51FC2CC6D15900B6F83B /* PillTextView.swift */,
+				04FF51FE2CC6D41E00B6F83B /* PopoverListView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -216,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				0467F8C72CC51B3A00F153CA /* FetchNewsViewModel.swift */,
+				04FF520F2CC6DFB800B6F83B /* BookmarkListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,24 +271,56 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		0467F8D52CC522EA00F153CA /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				0467F8D62CC522FB00F153CA /* Networking */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		0467F8D62CC522FB00F153CA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0467F8DB2CC5256400F153CA /* Networking.swift */,
 				0467F8D72CC5232B00F153CA /* DataManager.swift */,
 				0467F8D92CC5236B00F153CA /* EndPoint.swift */,
 				0467F8DD2CC526C100F153CA /* NErrors.swift */,
-				0467F8DF2CC52EF600F153CA /* HTTPClient.swift */,
+				0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		04FF51F92CC6BBE400B6F83B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				04FF51FA2CC6BC0100B6F83B /* StringConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		04FF52002CC6DBCC00B6F83B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04FF52012CC6DBCC00B6F83B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04FF52062CC6DC0900B6F83B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04FF52072CC6DC1500B6F83B /* Persistance */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04FF52072CC6DC1500B6F83B /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				04FF520A2CC6DDC300B6F83B /* Entity */,
+				04FF52032CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodeld */,
+				04FF52082CC6DD1F00B6F83B /* CoreDataStack.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		04FF520A2CC6DDC300B6F83B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,16 +453,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FF52102CC6DFB800B6F83B /* BookmarkListViewModel.swift in Sources */,
 				0467F88D2CC4F17E00F153CA /* MainView.swift in Sources */,
 				0467F8E22CC56FA400F153CA /* WebView.swift in Sources */,
+				04FF51FD2CC6D15900B6F83B /* PillTextView.swift in Sources */,
 				0467F8D82CC5232B00F153CA /* DataManager.swift in Sources */,
-				0467F8DC2CC5256400F153CA /* Networking.swift in Sources */,
 				0467F8E42CC5704000F153CA /* ActivityViewController.swift in Sources */,
 				0467F8D02CC5218A00F153CA /* Models.swift in Sources */,
 				0467F8CB2CC51D0800F153CA /* FetchNewsUseCase.swift in Sources */,
-				0467F8C22CC516F200F153CA /* DetialView.swift in Sources */,
+				0467F8C22CC516F200F153CA /* DetailView.swift in Sources */,
 				0467F8B82CC50E9000F153CA /* HomeView.swift in Sources */,
 				0467F8CE2CC51F3B00F153CA /* FetchNewsRepository.swift in Sources */,
+				04FF51FF2CC6D41E00B6F83B /* PopoverListView.swift in Sources */,
+				04FF52052CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodeld in Sources */,
 				0467F8B52CC50E1E00F153CA /* NewsAppCoordinator.swift in Sources */,
 				0467F8BA2CC5122800F153CA /* BookMarkView.swift in Sources */,
 				0467F8C02CC5161700F153CA /* NewsCellView.swift in Sources */,
@@ -420,8 +474,10 @@
 				0467F8C82CC51B3A00F153CA /* FetchNewsViewModel.swift in Sources */,
 				0467F8D32CC5229A00F153CA /* FetchNewsService.swift in Sources */,
 				0467F88B2CC4F17E00F153CA /* NewsReaderApp.swift in Sources */,
+				04FF52092CC6DD1F00B6F83B /* CoreDataStack.swift in Sources */,
+				04FF51FB2CC6BC0100B6F83B /* StringConstants.swift in Sources */,
 				0467F8DE2CC526C100F153CA /* NErrors.swift in Sources */,
-				0467F8E02CC52EF600F153CA /* HTTPClient.swift in Sources */,
+				0467F8E02CC52EF600F153CA /* NetworkRequest.swift in Sources */,
 				0467F8BE2CC512E300F153CA /* NAppDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +808,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04FF52032CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04FF52042CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodel */,
+			);
+			currentVersion = 04FF52042CC6DBFE00B6F83B /* NewsReaderApp.xcdatamodel */;
+			path = NewsReaderApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0467F87F2CC4F17E00F153CA /* Project object */;
 }

@@ -28,7 +28,7 @@ extension EndPoint {
     
     var parameters: [String: Any] {
         // TODO: Need to place/store this key in secure place
-        var params = ["apikey": "pub_56780876b65deaf263f203a0a0bf89c3310c3"]
+        let params = ["apikey": "pub_56780876b65deaf263f203a0a0bf89c3310c3"]
         switch self {
         case .fetchNews:
             print("No additional parameters required")
@@ -51,10 +51,4 @@ extension EndPoint {
 enum HttpMethod: String {
     case get
     case post
-}
-
-extension HttpMethod {
-    var name: String {
-        return self.rawValue
-    }
 }

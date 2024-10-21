@@ -9,7 +9,16 @@ import Foundation
 import SwiftUI
 
 struct BookMarkView: View {
-    var body: some View {
-        Text("BookMark Screen")
-    }
+    @FetchRequest(
+        entity: BookMarkedNews.entity(), sortDescriptors: []
+        ) var items: FetchedResults<BookMarkedNews>
+
+        var body: some View {
+            List($items, id: \.self) { item in
+                Text(item.attribute ?? "Unknown")
+            }
+            .onAppear {
+                // Optionally load data or perform actions
+            }
+        }
 }

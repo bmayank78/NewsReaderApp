@@ -1,5 +1,5 @@
 //
-//  HTTPClient.swift
+//  NetworkRequest.swift
 //  NewsReaderApp
 //
 //  Created by Mayank  Bajpai on 20/10/24.
@@ -7,7 +7,11 @@
 
 import Foundation
 
-public struct HttpClient: Networking {
+protocol Networking {
+    func request(endpoint: EndPoint, completion: @escaping (Data?, NErrors?) -> Void)
+}
+
+public struct NetworkRequest: Networking {
    
     public init() {}
     

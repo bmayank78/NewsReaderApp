@@ -1,19 +1,22 @@
 //
-//  NewsListViewModel.swift
+//  BookmarkListViewModel.swift
 //  NewsReaderApp
 //
-//  Created by Mayank  Bajpai on 20/10/24.
+//  Created by Mayank  Bajpai on 22/10/24.
 //
 
 import Foundation
+import CoreData
 import Combine
 
-class FetchNewsViewModel: ObservableObject {
+class BookmarkListViewModel: ObservableObject {
     let fetchNoticeUseCase: FetchNewsUseCase
     let dependencies: NAppDependencies
-    @Published private var newsResults: [NewsModelDTO] = []
+    @Published private var bookmarkedNewsResults: [NewsModelDTO] = []
     @Published var filteredNewsResults: [NewsModelDTO] = []
     @Published var allCategories: [String] = []
+    let persistenceController = CoreDataStack.shared
+    
     private var selectedCategory: String? = nil {  // For dropdown selection
         didSet {
             self.filterNews()
@@ -28,19 +31,11 @@ class FetchNewsViewModel: ObservableObject {
     }
     
     func fetchNews() {
-        isLoading = true
-        Task {
-            await self.fetchNoticeUseCase.fetchNews().sink(receiveCompletion: {  completion in
-                if case .failure(let appError) = completion {
-                    print("error \(appError.localizedDescription)")
-                }
-                self.isLoading = false
-            }, receiveValue: { newsList in
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    self.convertToDTOs(newsList: newsList)
-                }
-            }).store(in: &self.cancellable)
+        let request: NSFetchRequest<BookMarkedNews> = BookMarkedNews.fetchRequest()
+        do {
+            bookmarkedNewsResults = try persistenceController.persistentContainer.viewContext.fetch(request)
+        } catch {
+            print("Failed to fetch items: \(error)")
         }
     }
     
@@ -63,15 +58,15 @@ class FetchNewsViewModel: ObservableObject {
             }
         }
         allCategories = categories
-        newsResults = newsResultDTOs
+        bookmarkedNewsResults = newsResultDTOs
         filterNews()
     }
     
     func filterNews() {
         if let category = selectedCategory, category != "All" {
-            filteredNewsResults = newsResults.filter { $0.category?.caseInsensitiveCompare(category) == .orderedSame }
+            filteredNewsResults = bookmarkedNewsResults.filter { $0.category?.caseInsensitiveCompare(category) == .orderedSame }
         } else {
-            filteredNewsResults = newsResults
+            filteredNewsResults = bookmarkedNewsResults
         }
     }
     

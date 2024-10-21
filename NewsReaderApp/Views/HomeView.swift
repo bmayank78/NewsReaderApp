@@ -10,55 +10,47 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @ObservedObject var viewModel: FetchNewsViewModel
-    @State private var isPopoverVisible = false
+    @ObservedObject private var viewModel: FetchNewsViewModel
+    @State private var selectedCategory: String = StringConstants.HomeViewConstants.defaultCategory
     
     init(dependencies: NAppDependencies) {
         self.viewModel = dependencies.resolveNewsListViewModel()
+        self.viewModel.fetchNews()
     }
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.newsResults) { news in
-                    NavigationLink(destination: DetialView(news: news)) {
+                ForEach(viewModel.filteredNewsResults) { news in
+                    NavigationLink(destination: DetailView(news: news)) {
                         NewsCellView(newsItem: news)
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
-            .navigationBarTitle(Text("News"))
+            .navigationBarTitle(Text(StringConstants.HomeViewConstants.screenTitle))
             .navigationBarItems(leading: Button(action: {
-                self.isPopoverVisible.toggle()
             }) {
-                HStack {
-                    Text("Categories")
-                    Image(systemName: "ellipsis.circle")
+                if !viewModel.isLoading {
+                    PopoverListView(menuItems: viewModel.allCategories, selectedCategory: $selectedCategory) {
+                        viewModel.updateCategory(category: selectedCategory)
+                    }
                 }
             })
             .navigationBarItems(trailing: Button(action: {
-                
             }) {
                 if viewModel.isLoading {
                     ActivityIndicatorView(style: .medium)
+                } else {
+                    Button(action: {
+                        self.viewModel.fetchNews()
+                    }) {
+                        Image(systemName: "arrow.clockwise")
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                    }
                 }
             })
-            .popover(isPresented: $isPopoverVisible) {
-                PopoverListView()
-                    .frame(width: 200, height: 300)
-            }
-            .onAppear() {
-                // self.viewModel.fetchNews()
-            }
-        }
-    }
-}
-
-struct PopoverListView: View {
-    var body: some View {
-        List {
-            Text("Option 1")
-            Text("Option 2")
-            Text("Option 3")
         }
     }
 }

@@ -7,16 +7,15 @@
 
 import Foundation
 
+// Define your tabs (enums can be used to represent tab items)
+enum BottomTabBar {
+    case home
+    case bookmark
+}
 
 class NAppDependencies {
     
-    // Define your tabs (enums can be used to represent tab items)
-    enum Tab {
-        case home
-        case bookmark
-    }
-    
-    func getInitialTab() -> Tab {
+    func getInitialTab() -> BottomTabBar {
         // additional buisness logic
         // Initialization or further navigation can happen here
         return .home
@@ -35,6 +34,6 @@ class NAppDependencies {
     }
     
     func resolveDataManager() -> DataManager {
-        return DataManager(networking: HttpClient())
+        return DataManager(networking: NetworkRequest())
     }
 }

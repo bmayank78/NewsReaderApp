@@ -8,6 +8,10 @@
 import Foundation
 import Combine
 
+protocol Fetcher {
+    func fetch<T>(endpoint: EndPoint, completion: @escaping (T?, NErrors?) -> Void) where T: Decodable
+}
+
 class DataManager: Fetcher {
     
     private var networking: Networking
