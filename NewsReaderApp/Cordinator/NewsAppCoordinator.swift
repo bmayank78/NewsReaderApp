@@ -15,10 +15,11 @@ protocol Coordinator {
 class NewsAppCoordinator: Coordinator, ObservableObject {
     // Define a property to track the selected tab
     @Published var selectedTab: BottomTabBar = .home
-    var appDependencies: NAppDependencies
+    
+    var appDependencies: DefaultNewsAppDependencies
     
     init() {
-        self.appDependencies = NAppDependencies()
+        self.appDependencies = DefaultNewsAppDependencies()
     }
     
     func start() {

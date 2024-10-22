@@ -10,20 +10,18 @@ import SwiftUI
 
 struct NewsCellView : View {
 
-    var newsItem: NewsModelDTO
-    @State private var isBookmarked = false
-    
-    init(newsItem: NewsModelDTO) {
-        self.newsItem = newsItem
-    }
+    @State var newsItem: NewsModelDTO
+    // @State private var isBookmarked = false
+    var onTappedBookmark: (_ isBookmarked: Bool) -> Void = { _ in}
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Button(action: {
-                    isBookmarked.toggle()
+                    newsItem.isBookmarked?.toggle()
+                    self.onTappedBookmark(newsItem.isBookmarked ?? false)
                 }) {
-                    Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
+                    Image(systemName: newsItem.isBookmarked ?? false ? "bookmark.fill" : "bookmark")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24, height: 24)

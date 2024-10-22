@@ -12,7 +12,7 @@ class CoreDataStack {
     static let shared = CoreDataStack()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "NewsReaderApp") // Replace "Model" with your data model name
+        let container = NSPersistentContainer(name: "NewsApp") // Replace "Model" with your data model name
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

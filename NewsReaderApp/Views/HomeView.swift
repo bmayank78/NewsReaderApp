@@ -10,20 +10,30 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @ObservedObject private var viewModel: FetchNewsViewModel
+    @ObservedObject private var fetchNewsViewModel: FetchNewsViewModel
+    private var addBookmarkViewModel: AddBookmarkViewModel
+    private var deleteBookmarkViewModel: DeleteBookmarkViewModel
     @State private var selectedCategory: String = StringConstants.HomeViewConstants.defaultCategory
     
-    init(dependencies: NAppDependencies) {
-        self.viewModel = dependencies.resolveNewsListViewModel()
-        self.viewModel.fetchNews()
+    init(dependencies: DefaultNewsAppDependencies) {
+        self.fetchNewsViewModel = dependencies.resolveFetchNewsViewModel()
+        self.addBookmarkViewModel = dependencies.resolveAddBookmarksViewModel()
+        self.deleteBookmarkViewModel = dependencies.resolveDeleteBookmarksViewModel()
+        self.fetchNewsViewModel.fetchNews()
     }
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.filteredNewsResults) { news in
+                ForEach(fetchNewsViewModel.filteredNewsResults) { news in
                     NavigationLink(destination: DetailView(news: news)) {
-                        NewsCellView(newsItem: news)
+                        NewsCellView(newsItem: news) { isBookmarked in
+                            if isBookmarked {
+                                self.addBookmarkViewModel.addBookmark(newsModelDTO: news)
+                            } else {
+                                self.deleteBookmarkViewModel.deleteBookmark(newsModelDTO: news)
+                            }
+                        }
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -31,19 +41,19 @@ struct HomeView: View {
             .navigationBarTitle(Text(StringConstants.HomeViewConstants.screenTitle))
             .navigationBarItems(leading: Button(action: {
             }) {
-                if !viewModel.isLoading {
-                    PopoverListView(menuItems: viewModel.allCategories, selectedCategory: $selectedCategory) {
-                        viewModel.updateCategory(category: selectedCategory)
+                if !fetchNewsViewModel.isLoading {
+                    PopoverListView(menuItems: fetchNewsViewModel.allCategories, selectedCategory: $selectedCategory) {
+                        fetchNewsViewModel.updateCategory(category: selectedCategory)
                     }
                 }
             })
             .navigationBarItems(trailing: Button(action: {
             }) {
-                if viewModel.isLoading {
+                if fetchNewsViewModel.isLoading {
                     ActivityIndicatorView(style: .medium)
                 } else {
                     Button(action: {
-                        self.viewModel.fetchNews()
+                        self.fetchNewsViewModel.fetchNews()
                     }) {
                         Image(systemName: "arrow.clockwise")
                             .font(.subheadline)

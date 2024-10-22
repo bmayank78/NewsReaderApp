@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-class FetchNewsViewModel: ObservableObject {
-    let fetchNoticeUseCase: FetchNewsUseCase
-    let dependencies: NAppDependencies
+final class FetchNewsViewModel: ObservableObject {
+    private let fetchNewsUseCase: FetchNewsUseCase
+    private  let dependencies: DefaultNewsAppDependencies
     @Published private var newsResults: [NewsModelDTO] = []
     @Published var filteredNewsResults: [NewsModelDTO] = []
     @Published var allCategories: [String] = []
@@ -22,15 +22,15 @@ class FetchNewsViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     private var cancellable = Set<AnyCancellable>()
     
-    init(dependencies: NAppDependencies) {
+    init(dependencies: DefaultNewsAppDependencies) {
         self.dependencies = dependencies
-        self.fetchNoticeUseCase = dependencies.resolveFetchNewsUseCase()
+        self.fetchNewsUseCase = dependencies.resolveFetchNewsUseCase()
     }
     
     func fetchNews() {
         isLoading = true
         Task {
-            await self.fetchNoticeUseCase.fetchNews().sink(receiveCompletion: {  completion in
+            await self.fetchNewsUseCase.fetchNews().sink(receiveCompletion: {  completion in
                 if case .failure(let appError) = completion {
                     print("error \(appError.localizedDescription)")
                 }
@@ -47,7 +47,9 @@ class FetchNewsViewModel: ObservableObject {
     func convertToDTOs(newsList: [NewsModel]?) {
         var newsResultDTOs: [NewsModelDTO] = []
         var categories: [String] = ["All"]
+        let bookmarkedNews = dependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
         for newsItem in newsList ?? [] {
+            let isAlreadyBookmarked = bookmarkedNews.contains(where: {$0.article_id == newsItem.article_id })
             let newsModelDTO = NewsModelDTO(
                 article_id: newsItem.article_id,
                 title: newsItem.title,
@@ -55,7 +57,8 @@ class FetchNewsViewModel: ObservableObject {
                 link: newsItem.link,
                 summary: newsItem.description,
                 pubDate: newsItem.pubDate,
-                category: newsItem.category?.first
+                category: newsItem.category?.first,
+                isBookmarked: isAlreadyBookmarked
             )
             newsResultDTOs.append(newsModelDTO)
             if let category = newsItem.category?.first, categories.contains(category) == false {

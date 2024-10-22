@@ -10,9 +10,9 @@ import Combine
 
 class FetchNewsRepository {
     
-    private let dependencies: NAppDependencies
+    private let dependencies: DefaultNewsAppDependencies
     
-    init(dependencies: NAppDependencies) {
+    init(dependencies: DefaultNewsAppDependencies) {
         self.dependencies = dependencies
     }
     

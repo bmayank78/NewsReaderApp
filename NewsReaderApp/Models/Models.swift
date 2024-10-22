@@ -33,4 +33,5 @@ struct NewsModelDTO: Decodable, Equatable, Identifiable {
     let summary: String?
     let pubDate: String?
     let category: String?
+    var isBookmarked: Bool?
 }

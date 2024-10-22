@@ -21,4 +21,8 @@ struct StringConstants {
         static let categoriesTitle = "Categories"
         static let defaultCategory = "All"
     }
+    
+    struct BookmarkViewConstants {
+        static let screenTitle = "Bookmarked News"
+    }
 }
