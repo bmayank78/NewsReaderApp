@@ -13,7 +13,7 @@ protocol Coordinator {
 }
 
 class NewsAppCoordinator: Coordinator, ObservableObject {
-    // Define a property to track the selected tab
+
     @Published var selectedTab: BottomTabBar = .home
     
     var appDependencies: DefaultNewsAppDependencies
@@ -23,7 +23,6 @@ class NewsAppCoordinator: Coordinator, ObservableObject {
     }
     
     func start() {
-        // Initialization or further navigation can happen here
         self.selectedTab = self.appDependencies.getInitialTab()
     }
     

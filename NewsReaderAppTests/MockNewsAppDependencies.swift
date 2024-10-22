@@ -1,40 +1,16 @@
 //
-//  NewsAppDependencies.swift
-//  NewsReaderApp
+//  MockNewsAppDependencies.swift
+//  NewsReaderAppTests
 //
-//  Created by Mayank  Bajpai on 20/10/24.
+//  Created by Mayank  Bajpai on 23/10/24.
 //
 
 import Foundation
+@testable import NewsReaderApp
 
-// Define your tabs (enums can be used to represent tab items)
-enum BottomTabBar {
-    case home
-    case bookmark
-}
-
-protocol NewsAppDependencies {
-    func resolveStorage() -> StorageProtocol.Type
-    func resolveFetchNewsViewModel() -> FetchNewsViewModel
-    func resolveFetchNewsUseCase() -> FetchNewsUseCase
-    func resolveFetchNewsRepository() -> FetchNewsRepository
-    func resolveFetchBookmarksViewModel() -> FetchBookmarksViewModel
-    func resolveFetchBookmarksUseCase() -> FetchBookmarkUseCase
-    func resolveFetchBookmarkRepository() -> FetchBookmarkRepository
-    func resolveAddBookmarksViewModel() -> AddBookmarkViewModel
-    func resolveAddBookmarksUseCase() -> AddBookmarkUseCase
-    func resolveDeleteBookmarksViewModel() -> DeleteBookmarkViewModel
-    func resolveDeleteBookmarksUseCase() -> DeleteBookmarkUseCase
-    func resolveDataManager() -> DataManager
-}
-
-//TODO: Modulewise Manage dependencies
-class DefaultNewsAppDependencies:  NewsAppDependencies {
-    
-    func getInitialTab() -> BottomTabBar {
-        // additional buisness logic
-        // Initialization or further navigation can happen here
-        return .home
+final class MockNewsAppDependencies: NewsAppDependencies {
+    func resolveStorage() -> StorageProtocol.Type {
+        return MockCoreDataUtil.self
     }
     
     //MARK: - News List dependencies
@@ -84,13 +60,7 @@ class DefaultNewsAppDependencies:  NewsAppDependencies {
         return DeleteBookmarkUseCase(dependencies: self)
     }
     
-    //MARK: - Common dependencies
-    
     func resolveDataManager() -> DataManager {
         return DataManager(networking: NetworkRequest())
-    }
-    
-    func resolveStorage() -> StorageProtocol.Type {
-        return CoreDataUtil.self
     }
 }

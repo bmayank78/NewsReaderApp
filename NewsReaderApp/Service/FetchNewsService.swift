@@ -19,6 +19,7 @@ public class FetchNewsService {
     func fetchNews() async -> Future<[NewsModel]?, NErrors> {
         
         return Future { promise in
+            //TODO: instead of passing end point we should pass url request
             self.dataManager.fetch(endpoint: .fetchNews) { (response: NewsData?, error) in
                 guard error == nil else {
                     promise(.failure(.unknownError))

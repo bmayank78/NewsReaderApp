@@ -10,11 +10,11 @@ import CoreData
 
 class AddBookmarkViewModel {
     
-    private let dependencies: DefaultNewsAppDependencies
+    private let dependencies: NewsAppDependencies
     private let addBookmarkUseCase: AddBookmarkUseCase
     private let storage: StorageProtocol.Type
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
         self.addBookmarkUseCase = dependencies.resolveAddBookmarksUseCase()
         self.storage = dependencies.resolveStorage()

@@ -10,10 +10,10 @@ import CoreData
 
 class FetchBookmarkRepository {
     
-    private let dependencies: DefaultNewsAppDependencies
+    private let dependencies: NewsAppDependencies
     private let storage: StorageProtocol.Type
     
-    init(dependencies: DefaultNewsAppDependencies, storage: StorageProtocol.Type) {
+    init(dependencies: NewsAppDependencies, storage: StorageProtocol.Type) {
         self.dependencies = dependencies
         self.storage = storage
     }
@@ -24,7 +24,6 @@ class FetchBookmarkRepository {
         do {
             bookmarkedNews = try self.storage.managedObjectContext.fetch(fetchRequest)
         } catch {
-            // Handle the error
             print("Failed to fetch persons: \(error.localizedDescription)")
         }
         return bookmarkedNews

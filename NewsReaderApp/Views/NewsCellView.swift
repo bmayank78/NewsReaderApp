@@ -11,7 +11,6 @@ import SwiftUI
 struct NewsCellView : View {
 
     @State var newsItem: NewsModelDTO
-    // @State private var isBookmarked = false
     var onTappedBookmark: (_ isBookmarked: Bool) -> Void = { _ in}
     
     var body: some View {

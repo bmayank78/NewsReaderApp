@@ -9,11 +9,11 @@ import Foundation
 
 class DeleteBookmarkViewModel {
     
-    private let dependencies: DefaultNewsAppDependencies
+    private let dependencies: NewsAppDependencies
     private let deleteBookmarkUseCase: DeleteBookmarkUseCase
     private let storage: StorageProtocol.Type
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
         self.deleteBookmarkUseCase = dependencies.resolveDeleteBookmarksUseCase()
         self.storage = dependencies.resolveStorage()

@@ -23,17 +23,7 @@ struct DetailView: View {
                     ActivityIndicatorView(style: .large)
                 }
             }
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showSheet = true
-                }) {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundColor(.blue)
-                        .accessibility(label: Text("Share story"))
-                }.sheet(isPresented: $showSheet) {
-                    ActivityViewController(url: newsLinkUrl)
-                }
-            ).navigationBarTitle(news.title?.components(separatedBy: " ").first ?? StringConstants.defaultString, displayMode: .inline)
+            .navigationBarTitle(news.title?.components(separatedBy: " ").first ?? StringConstants.defaultString, displayMode: .inline)
         }
     }
 }

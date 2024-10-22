@@ -1,18 +1,23 @@
 //
-//  CoreDataStack.swift
-//  NewsReaderApp
+//  MockCoreDataStack.swift
+//  NewsReaderAppTests
 //
-//  Created by Mayank  Bajpai on 22/10/24.
+//  Created by Mayank  Bajpai on 23/10/24.
 //
 
 import Foundation
 import CoreData
+@testable import NewsReaderApp
 
-class CoreDataStack {
-    static let shared = CoreDataStack()
+class MockCoreDataStack {
+    static let shared = MockCoreDataStack()
     
+    private init() {}
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "NewsApp")
+        let description = NSPersistentStoreDescription()
+        description.url = URL(fileURLWithPath: "/dev/null")
+        container.persistentStoreDescriptions = [description]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

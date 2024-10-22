@@ -42,6 +42,7 @@ struct HomeView: View {
             .navigationBarItems(leading: Button(action: {
             }) {
                 if !fetchNewsViewModel.isLoading {
+                    // display category selection list
                     PopoverListView(menuItems: fetchNewsViewModel.allCategories, selectedCategory: $selectedCategory) {
                         fetchNewsViewModel.updateCategory(category: selectedCategory)
                     }
@@ -50,8 +51,10 @@ struct HomeView: View {
             .navigationBarItems(trailing: Button(action: {
             }) {
                 if fetchNewsViewModel.isLoading {
+                    // display loader on navigation bar
                     ActivityIndicatorView(style: .medium)
                 } else {
+                    // refresh button
                     Button(action: {
                         self.fetchNewsViewModel.fetchNews()
                     }) {

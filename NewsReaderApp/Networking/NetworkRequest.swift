@@ -24,7 +24,6 @@ public struct NetworkRequest: Networking {
             }
             var request = URLRequest(url: url)
             request.httpMethod = endpoint.httpMethod.rawValue
-            
             let dataTask = sharedSession.dataTask(with: request) { data, _, error in
                 DispatchQueue.main.async {
                     guard error == nil else {

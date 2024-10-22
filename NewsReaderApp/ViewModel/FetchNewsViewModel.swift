@@ -10,11 +10,11 @@ import Combine
 
 final class FetchNewsViewModel: ObservableObject {
     private let fetchNewsUseCase: FetchNewsUseCase
-    private  let dependencies: DefaultNewsAppDependencies
+    private  let dependencies: NewsAppDependencies
     @Published private var newsResults: [NewsModelDTO] = []
     @Published var filteredNewsResults: [NewsModelDTO] = []
     @Published var allCategories: [String] = []
-    private var selectedCategory: String? = nil {  // For dropdown selection
+    private var selectedCategory: String? = nil {
         didSet {
             self.filterNews()
         }
@@ -22,7 +22,7 @@ final class FetchNewsViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     private var cancellable = Set<AnyCancellable>()
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
         self.fetchNewsUseCase = dependencies.resolveFetchNewsUseCase()
     }
@@ -46,7 +46,7 @@ final class FetchNewsViewModel: ObservableObject {
     
     func convertToDTOs(newsList: [NewsModel]?) {
         var newsResultDTOs: [NewsModelDTO] = []
-        var categories: [String] = ["All"]
+        var categories: [String] = [StringConstants.HomeViewConstants.defaultCategory]
         let bookmarkedNews = dependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
         for newsItem in newsList ?? [] {
             let isAlreadyBookmarked = bookmarkedNews.contains(where: {$0.article_id == newsItem.article_id })
@@ -71,7 +71,7 @@ final class FetchNewsViewModel: ObservableObject {
     }
     
     func filterNews() {
-        if let category = selectedCategory, category != "All" {
+        if let category = selectedCategory, category != StringConstants.HomeViewConstants.defaultCategory {
             filteredNewsResults = newsResults.filter { $0.category?.caseInsensitiveCompare(category) == .orderedSame }
         } else {
             filteredNewsResults = newsResults

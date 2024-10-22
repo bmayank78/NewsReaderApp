@@ -11,11 +11,11 @@ import Combine
 
 class FetchBookmarksViewModel: ObservableObject {
     let fetchBookmarkUseCase: FetchBookmarkUseCase
-    let dependencies: DefaultNewsAppDependencies
+    let dependencies: NewsAppDependencies
     @Published var bookmarkedNewsResults: [NewsModelDTO] = []
     let persistenceController = CoreDataStack.shared
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
         self.fetchBookmarkUseCase = dependencies.resolveFetchBookmarksUseCase()
     }

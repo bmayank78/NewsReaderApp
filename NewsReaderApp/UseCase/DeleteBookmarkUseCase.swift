@@ -9,10 +9,10 @@ import Foundation
 
 final class DeleteBookmarkUseCase {
     
-    private let dependencies: DefaultNewsAppDependencies
+    private let dependencies: NewsAppDependencies
     private let storage: StorageProtocol.Type
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
         self.storage = dependencies.resolveStorage()
     }
