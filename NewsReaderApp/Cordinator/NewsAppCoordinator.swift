@@ -9,21 +9,24 @@ import Foundation
 import SwiftUI
 
 protocol Coordinator {
-    func start()
+    func start() -> AnyView
 }
 
-class NewsAppCoordinator: Coordinator, ObservableObject {
+final class NewsAppCoordinator: Coordinator, ObservableObject {
 
-    @Published var selectedTab: BottomTabBar = .home
+    @Published var selectedTab: BottomTabBar
     
     var appDependencies: DefaultNewsAppDependencies
+    var homeCoordinator: HomeCoordinator
     
     init() {
         self.appDependencies = DefaultNewsAppDependencies()
+        self.selectedTab = self.appDependencies.getInitialTab()
+        self.homeCoordinator = HomeCoordinator(appDependencies: self.appDependencies)
     }
     
-    func start() {
-        self.selectedTab = self.appDependencies.getInitialTab()
+    func start() -> AnyView {
+        return AnyView(MainView(coordinator: self))
     }
     
     // This can be used to manage the tab switch flows or deep linking in the future

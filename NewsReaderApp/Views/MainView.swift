@@ -13,7 +13,8 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $coordinator.selectedTab) {
-            HomeView(dependencies: coordinator.appDependencies)
+            
+            coordinator.homeCoordinator.start()
                 .tabItem {
                     Label(StringConstants.MainViewConstants.bottomBarHomeTitle, systemImage: "house")
                 }

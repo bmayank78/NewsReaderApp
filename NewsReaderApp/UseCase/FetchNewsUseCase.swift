@@ -11,7 +11,7 @@ import Combine
 class FetchNewsUseCase {
     private let repository: FetchNewsRepository
     
-    init(dependencies: NewsAppDependencies, repository: FetchNewsRepository) {
+    init(dependencies: DefaultHomeDependencies, repository: FetchNewsRepository) {
         self.repository = repository
     }
     

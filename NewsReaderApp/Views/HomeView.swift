@@ -15,10 +15,10 @@ struct HomeView: View {
     private var deleteBookmarkViewModel: DeleteBookmarkViewModel
     @State private var selectedCategory: String = StringConstants.HomeViewConstants.defaultCategory
     
-    init(dependencies: DefaultNewsAppDependencies) {
+    init(dependencies: HomeDependencies) {
         self.fetchNewsViewModel = dependencies.resolveFetchNewsViewModel()
-        self.addBookmarkViewModel = dependencies.resolveAddBookmarksViewModel()
-        self.deleteBookmarkViewModel = dependencies.resolveDeleteBookmarksViewModel()
+        self.addBookmarkViewModel = dependencies.appDependencies.resolveAddBookmarksViewModel()
+        self.deleteBookmarkViewModel = dependencies.appDependencies.resolveDeleteBookmarksViewModel()
         self.fetchNewsViewModel.fetchNews()
     }
     
@@ -26,7 +26,7 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(fetchNewsViewModel.filteredNewsResults) { news in
-                    NavigationLink(destination: DetailView(news: news)) {
+                    NavigationLink(destination: self.fetchNewsViewModel.showDetailViewHandling(news: news)) {
                         NewsCellView(newsItem: news) { isBookmarked in
                             if isBookmarked {
                                 self.addBookmarkViewModel.addBookmark(newsModelDTO: news)

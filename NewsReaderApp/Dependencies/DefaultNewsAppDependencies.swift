@@ -15,9 +15,6 @@ enum BottomTabBar {
 
 protocol NewsAppDependencies {
     func resolveStorage() -> StorageProtocol.Type
-    func resolveFetchNewsViewModel() -> FetchNewsViewModel
-    func resolveFetchNewsUseCase() -> FetchNewsUseCase
-    func resolveFetchNewsRepository() -> FetchNewsRepository
     func resolveFetchBookmarksViewModel() -> FetchBookmarksViewModel
     func resolveFetchBookmarksUseCase() -> FetchBookmarkUseCase
     func resolveFetchBookmarkRepository() -> FetchBookmarkRepository
@@ -26,28 +23,16 @@ protocol NewsAppDependencies {
     func resolveDeleteBookmarksViewModel() -> DeleteBookmarkViewModel
     func resolveDeleteBookmarksUseCase() -> DeleteBookmarkUseCase
     func resolveDataManager() -> DataManager
+    func getInitialTab() -> BottomTabBar
 }
 
-//TODO: Modulewise Manage dependencies
+//TODO: Modulewise Manage dependencies (same structure wil be followed as Home module)
 class DefaultNewsAppDependencies:  NewsAppDependencies {
     
     func getInitialTab() -> BottomTabBar {
         // additional buisness logic
         // Initialization or further navigation can happen here
         return .home
-    }
-    
-    //MARK: - News List dependencies
-    func resolveFetchNewsViewModel() -> FetchNewsViewModel {
-        return FetchNewsViewModel(dependencies: self)
-    }
-    
-    func resolveFetchNewsUseCase() -> FetchNewsUseCase {
-        return FetchNewsUseCase(dependencies: self, repository: self.resolveFetchNewsRepository())
-    }
-    
-    func resolveFetchNewsRepository() -> FetchNewsRepository {
-        return FetchNewsRepository(dependencies: self)
     }
     
     //MARK: - Fetch bookmarks dependencies

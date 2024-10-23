@@ -7,10 +7,11 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class FetchNewsViewModel: ObservableObject {
     private let fetchNewsUseCase: FetchNewsUseCase
-    private  let dependencies: NewsAppDependencies
+    private  let dependencies: DefaultHomeDependencies
     @Published private var newsResults: [NewsModelDTO] = []
     @Published var filteredNewsResults: [NewsModelDTO] = []
     @Published var allCategories: [String] = []
@@ -22,7 +23,7 @@ final class FetchNewsViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     private var cancellable = Set<AnyCancellable>()
     
-    init(dependencies: NewsAppDependencies) {
+    init(dependencies: DefaultHomeDependencies) {
         self.dependencies = dependencies
         self.fetchNewsUseCase = dependencies.resolveFetchNewsUseCase()
     }
@@ -47,7 +48,7 @@ final class FetchNewsViewModel: ObservableObject {
     func convertToDTOs(newsList: [NewsModel]?) {
         var newsResultDTOs: [NewsModelDTO] = []
         var categories: [String] = [StringConstants.HomeViewConstants.defaultCategory]
-        let bookmarkedNews = dependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
+        let bookmarkedNews = dependencies.appDependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
         for newsItem in newsList ?? [] {
             let isAlreadyBookmarked = bookmarkedNews.contains(where: {$0.article_id == newsItem.article_id })
             let newsModelDTO = NewsModelDTO(
@@ -80,5 +81,9 @@ final class FetchNewsViewModel: ObservableObject {
     
     func updateCategory(category: String) {
         selectedCategory = category
+    }
+    
+    func showDetailViewHandling(news: NewsModelDTO) -> AnyView {
+        return self.dependencies.homeCoordActions.navigateToDetailScreen(news)
     }
 }

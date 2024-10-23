@@ -14,10 +14,7 @@ struct NewsReaderApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView(coordinator: mainCoordinator)
-                .onAppear {
-                    mainCoordinator.start()
-                }
+            mainCoordinator.start()
         }
     }
 }

@@ -10,14 +10,14 @@ import Combine
 
 class FetchNewsRepository {
     
-    private let dependencies: NewsAppDependencies
+    private let dependencies: DefaultHomeDependencies
     
-    init(dependencies: NewsAppDependencies) {
+    init(dependencies: DefaultHomeDependencies) {
         self.dependencies = dependencies
     }
     
     func fetchNews() async -> Future<[NewsModel]?, NErrors>  {
-        let dataManager = self.dependencies.resolveDataManager()
+        let dataManager = self.dependencies.appDependencies.resolveDataManager()
         let fetchNewsService = FetchNewsService(dataManager: dataManager)
         return await fetchNewsService.fetchNews()
     }

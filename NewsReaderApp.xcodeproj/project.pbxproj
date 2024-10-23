@@ -32,6 +32,8 @@
 		0467F8E02CC52EF600F153CA /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */; };
 		0467F8E22CC56FA400F153CA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E12CC56FA400F153CA /* WebView.swift */; };
 		0467F8E42CC5704000F153CA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E32CC5704000F153CA /* ActivityViewController.swift */; };
+		04BC88BD2CC95EC3001774EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */; };
+		04BC88BF2CC95F07001774EC /* DefaultHomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */; };
 		04F135142CC7E9770037C9AD /* FetchBookmarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */; };
 		04F135162CC7F2B90037C9AD /* FetchBookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */; };
 		04F135182CC7F4B50037C9AD /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135172CC7F4B50037C9AD /* AddBookmarkViewModel.swift */; };
@@ -105,6 +107,8 @@
 		0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0467F8E12CC56FA400F153CA /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0467F8E32CC5704000F153CA /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeDependencies.swift; sourceTree = "<group>"; };
 		04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkUseCase.swift; sourceTree = "<group>"; };
 		04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkRepository.swift; sourceTree = "<group>"; };
 		04F135172CC7F4B50037C9AD /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				0467F8B42CC50E1E00F153CA /* NewsAppCoordinator.swift */,
+				04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */,
 			);
 			path = Cordinator;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				0467F8BD2CC512E300F153CA /* DefaultNewsAppDependencies.swift */,
+				04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -527,9 +533,11 @@
 				04F1351F2CC7F7000037C9AD /* NewsApp.xcdatamodeld in Sources */,
 				0467F8B52CC50E1E00F153CA /* NewsAppCoordinator.swift in Sources */,
 				04F135182CC7F4B50037C9AD /* AddBookmarkViewModel.swift in Sources */,
+				04BC88BD2CC95EC3001774EC /* HomeCoordinator.swift in Sources */,
 				0467F8BA2CC5122800F153CA /* BookMarkView.swift in Sources */,
 				04F135302CC809520037C9AD /* BookmarkedNews+CoreDataClass.swift in Sources */,
 				04F135312CC809520037C9AD /* BookmarkedNews+CoreDataProperties.swift in Sources */,
+				04BC88BF2CC95F07001774EC /* DefaultHomeDependencies.swift in Sources */,
 				04F1352B2CC7F9810037C9AD /* CoreDataUtil.swift in Sources */,
 				0467F8C02CC5161700F153CA /* NewsCellView.swift in Sources */,
 				0467F8DA2CC5236B00F153CA /* EndPoint.swift in Sources */,
