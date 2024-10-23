@@ -11,7 +11,6 @@
 		0467F88D2CC4F17E00F153CA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F88C2CC4F17E00F153CA /* MainView.swift */; };
 		0467F88F2CC4F18000F153CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0467F88E2CC4F18000F153CA /* Assets.xcassets */; };
 		0467F8922CC4F18000F153CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0467F8912CC4F18000F153CA /* Preview Assets.xcassets */; };
-		0467F89C2CC4F18100F153CA /* NewsReaderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F89B2CC4F18100F153CA /* NewsReaderAppTests.swift */; };
 		0467F8A62CC4F18100F153CA /* NewsReaderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8A52CC4F18100F153CA /* NewsReaderAppUITests.swift */; };
 		0467F8A82CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8A72CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift */; };
 		0467F8B52CC50E1E00F153CA /* NewsAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B42CC50E1E00F153CA /* NewsAppCoordinator.swift */; };
@@ -85,7 +84,6 @@
 		0467F88E2CC4F18000F153CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0467F8912CC4F18000F153CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0467F8972CC4F18100F153CA /* NewsReaderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsReaderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0467F89B2CC4F18100F153CA /* NewsReaderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderAppTests.swift; sourceTree = "<group>"; };
 		0467F8A12CC4F18100F153CA /* NewsReaderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsReaderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0467F8A52CC4F18100F153CA /* NewsReaderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderAppUITests.swift; sourceTree = "<group>"; };
 		0467F8A72CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				04F135462CC83AD60037C9AD /* NewsData.plist */,
 				04F135442CC839BE0037C9AD /* TestUtility.swift */,
 				04F135422CC839570037C9AD /* NewsReaderAppHelper.swift */,
-				0467F89B2CC4F18100F153CA /* NewsReaderAppTests.swift */,
 				04F1353E2CC833470037C9AD /* MockCoreDataUtil.swift */,
 				04F135402CC833A00037C9AD /* MockCoreDataStack.swift */,
 				04F1353C2CC832F90037C9AD /* MockNewsAppDependencies.swift */,
@@ -564,7 +561,6 @@
 				04F1353D2CC832F90037C9AD /* MockNewsAppDependencies.swift in Sources */,
 				04F135452CC839BE0037C9AD /* TestUtility.swift in Sources */,
 				04F1353B2CC832CC0037C9AD /* AddBookmarkViewModelTests.swift in Sources */,
-				0467F89C2CC4F18100F153CA /* NewsReaderAppTests.swift in Sources */,
 				04F135412CC833A00037C9AD /* MockCoreDataStack.swift in Sources */,
 				04F135432CC839570037C9AD /* NewsReaderAppHelper.swift in Sources */,
 			);

@@ -19,6 +19,7 @@ final class AddBookmarkViewModelTests: XCTestCase {
         try super.setUpWithError()
         self.addBookmarkUseCase = dependencies.resolveAddBookmarksUseCase()
         self.fetchBookmarkUseCase = dependencies.resolveFetchBookmarksUseCase()
+        NewsReaderAppHelper.deleteAllEntities(entityName: "BookmarkedNews", context: dependencies.resolveStorage().managedObjectContext)
     }
 
     override func tearDownWithError() throws {

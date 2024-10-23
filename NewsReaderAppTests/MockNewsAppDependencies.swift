@@ -9,21 +9,9 @@ import Foundation
 @testable import NewsReaderApp
 
 final class MockNewsAppDependencies: NewsAppDependencies {
+    
     func resolveStorage() -> StorageProtocol.Type {
         return MockCoreDataUtil.self
-    }
-    
-    //MARK: - News List dependencies
-    func resolveFetchNewsViewModel() -> FetchNewsViewModel {
-        return FetchNewsViewModel(dependencies: self)
-    }
-    
-    func resolveFetchNewsUseCase() -> FetchNewsUseCase {
-        return FetchNewsUseCase(dependencies: self, repository: self.resolveFetchNewsRepository())
-    }
-    
-    func resolveFetchNewsRepository() -> FetchNewsRepository {
-        return FetchNewsRepository(dependencies: self)
     }
     
     //MARK: - Fetch bookmarks dependencies
@@ -62,5 +50,9 @@ final class MockNewsAppDependencies: NewsAppDependencies {
     
     func resolveDataManager() -> DataManager {
         return DataManager(networking: NetworkRequest())
+    }
+    
+    func getInitialTab() -> BottomTabBar {
+        .home
     }
 }

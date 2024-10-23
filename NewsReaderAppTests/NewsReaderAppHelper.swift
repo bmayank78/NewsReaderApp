@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 @testable import NewsReaderApp
 
 final class NewsReaderAppHelper {
@@ -28,5 +29,23 @@ final class NewsReaderAppHelper {
             category: newsData["category"] as? String
         )
         return newsModelDTO
+    }
+    
+    static func deleteAllEntities(entityName: String, context: NSManagedObjectContext) {
+        // Create a fetch request for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        // Create a batch delete request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            // Perform the batch delete
+            try context.execute(batchDeleteRequest)
+            // Optionally, save the context if you want to persist changes
+            try context.save()
+            print("\(entityName) entities deleted successfully.")
+        } catch {
+            print("Failed to delete entities: \(error.localizedDescription)")
+        }
     }
 }
