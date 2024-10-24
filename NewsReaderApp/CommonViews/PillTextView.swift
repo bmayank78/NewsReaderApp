@@ -18,6 +18,6 @@ struct PillTextView: View {
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(20)
-            .font(.system(size: 16, weight: .medium)) // Font style
+            .font(.system(size: 16, weight: .medium))
     }
 }

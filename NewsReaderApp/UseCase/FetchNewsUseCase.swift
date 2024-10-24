@@ -11,8 +11,8 @@ import Combine
 class FetchNewsUseCase {
     private let repository: FetchNewsRepository
     
-    init(dependencies: DefaultHomeDependencies, repository: FetchNewsRepository) {
-        self.repository = repository
+    init(dependencies: HomeDependencies) {
+        self.repository = dependencies.resolveFetchNewsRepository()
     }
     
     func fetchNews() async -> Future<[NewsModel]?, NErrors> {

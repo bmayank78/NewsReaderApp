@@ -16,13 +16,15 @@ final class NewsAppCoordinator: Coordinator, ObservableObject {
 
     @Published var selectedTab: BottomTabBar
     
-    var appDependencies: DefaultNewsAppDependencies
+    private var appDependencies: DefaultNewsAppDependencies
     var homeCoordinator: HomeCoordinator
+    var bookmarkCoordinator: BookmarkCoordinator
     
     init() {
         self.appDependencies = DefaultNewsAppDependencies()
         self.selectedTab = self.appDependencies.getInitialTab()
         self.homeCoordinator = HomeCoordinator(appDependencies: self.appDependencies)
+        self.bookmarkCoordinator = BookmarkCoordinator(appDependencies: self.appDependencies)
     }
     
     func start() -> AnyView {

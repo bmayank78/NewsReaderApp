@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol Fetcher {
-    func fetch<T>(endpoint: EndPoint, completion: @escaping (T?, NErrors?) -> Void) where T: Decodable
+    func executeRequest<T>(endpoint: EndPoint, completion: @escaping (T?, NErrors?) -> Void) where T: Decodable
 }
 
 class DataManager: Fetcher {
@@ -20,7 +20,7 @@ class DataManager: Fetcher {
         self.networking = networking
     }
     
-    func fetch<T>(endpoint: EndPoint, completion: @escaping (T?, NErrors?) -> Void) where T: Decodable {
+    func executeRequest<T>(endpoint: EndPoint, completion: @escaping (T?, NErrors?) -> Void) where T: Decodable {
         
         self.networking.request(endpoint: endpoint) { data, error in
             guard error == nil else {

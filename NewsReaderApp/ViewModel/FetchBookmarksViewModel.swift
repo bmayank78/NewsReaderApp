@@ -8,16 +8,16 @@
 import Foundation
 import CoreData
 import Combine
+import SwiftUI
 
 class FetchBookmarksViewModel: ObservableObject {
     let fetchBookmarkUseCase: FetchBookmarkUseCase
-    let dependencies: NewsAppDependencies
+    let dependencies: BookmarkDependencies
     @Published var bookmarkedNewsResults: [NewsModelDTO] = []
-    let persistenceController = CoreDataStack.shared
     
-    init(dependencies: NewsAppDependencies) {
+    init(dependencies: BookmarkDependencies) {
         self.dependencies = dependencies
-        self.fetchBookmarkUseCase = dependencies.resolveFetchBookmarksUseCase()
+        self.fetchBookmarkUseCase = dependencies.appDependencies.resolveFetchBookmarksUseCase()
     }
     
     func fetchBookmarks() {
@@ -27,7 +27,7 @@ class FetchBookmarksViewModel: ObservableObject {
     
     func convertToDTOs(bookmarkedNews: [BookmarkedNews]?) {
         var bookmarkedNewsDTOs: [NewsModelDTO] = []
-        let bookmarkedNews = dependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
+        let bookmarkedNews = dependencies.appDependencies.resolveFetchBookmarksUseCase().fetchBookmarks()
         for bookmarkedItem in bookmarkedNews {
             let isAlreadyBookmarked = bookmarkedNews.contains(where: {$0.article_id == bookmarkedItem.article_id })
             let newsModelDTO = NewsModelDTO(
@@ -43,5 +43,9 @@ class FetchBookmarksViewModel: ObservableObject {
             bookmarkedNewsDTOs.append(newsModelDTO)
         }
         bookmarkedNewsResults = bookmarkedNewsDTOs
+    }
+    
+    func showDetailViewHandling(news: NewsModelDTO) -> AnyView {
+        return self.dependencies.bookmarkCoordActions.navigateToDetailScreen(news)
     }
 }

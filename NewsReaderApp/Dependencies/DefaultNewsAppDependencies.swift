@@ -15,9 +15,8 @@ enum BottomTabBar {
 
 protocol NewsAppDependencies {
     func resolveStorage() -> StorageProtocol.Type
-    func resolveFetchBookmarksViewModel() -> FetchBookmarksViewModel
     func resolveFetchBookmarksUseCase() -> FetchBookmarkUseCase
-    func resolveFetchBookmarkRepository() -> FetchBookmarkRepository
+    func resolveFetchBookmarkRepository() -> FetchBookmarkRepository 
     func resolveAddBookmarksViewModel() -> AddBookmarkViewModel
     func resolveAddBookmarksUseCase() -> AddBookmarkUseCase
     func resolveDeleteBookmarksViewModel() -> DeleteBookmarkViewModel
@@ -26,31 +25,24 @@ protocol NewsAppDependencies {
     func getInitialTab() -> BottomTabBar
 }
 
-//TODO: Modulewise Manage dependencies (same structure wil be followed as Home module)
-class DefaultNewsAppDependencies:  NewsAppDependencies {
+final class DefaultNewsAppDependencies:  NewsAppDependencies {
     
-    func getInitialTab() -> BottomTabBar {
-        // additional buisness logic
-        // Initialization or further navigation can happen here
-        return .home
+    func resolveDataManager() -> DataManager {
+        return DataManager(networking: NetworkRequest())
     }
     
-    //MARK: - Fetch bookmarks dependencies
-    
-    func resolveFetchBookmarksViewModel() -> FetchBookmarksViewModel {
-        return FetchBookmarksViewModel(dependencies: self)
+    func resolveStorage() -> StorageProtocol.Type {
+        return CoreDataUtil.self
     }
     
     func resolveFetchBookmarksUseCase() -> FetchBookmarkUseCase {
-        return FetchBookmarkUseCase(dependencies: self, repository: self.resolveFetchBookmarkRepository())
+        return FetchBookmarkUseCase(dependencies: self)
     }
     
     func resolveFetchBookmarkRepository() -> FetchBookmarkRepository {
-        return FetchBookmarkRepository(dependencies: self, storage: self.resolveStorage())
+        return FetchBookmarkRepository(dependencies: self)
     }
-    
-    //MARK: - Add bookmarks dependencies
-    
+        
     func resolveAddBookmarksViewModel() -> AddBookmarkViewModel {
         return AddBookmarkViewModel(dependencies: self)
     }
@@ -58,9 +50,7 @@ class DefaultNewsAppDependencies:  NewsAppDependencies {
     func resolveAddBookmarksUseCase() -> AddBookmarkUseCase {
         return AddBookmarkUseCase(dependencies: self)
     }
-    
-    //MARK: - Delete bookmarks dependencies
-    
+        
     func resolveDeleteBookmarksViewModel() -> DeleteBookmarkViewModel {
         return DeleteBookmarkViewModel(dependencies: self)
     }
@@ -69,13 +59,9 @@ class DefaultNewsAppDependencies:  NewsAppDependencies {
         return DeleteBookmarkUseCase(dependencies: self)
     }
     
-    //MARK: - Common dependencies
-    
-    func resolveDataManager() -> DataManager {
-        return DataManager(networking: NetworkRequest())
-    }
-    
-    func resolveStorage() -> StorageProtocol.Type {
-        return CoreDataUtil.self
+    func getInitialTab() -> BottomTabBar {
+        // additional buisness logic
+        // Initialization or further navigation can happen here
+        return .home
     }
 }

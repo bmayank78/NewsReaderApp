@@ -15,12 +15,15 @@ protocol HomeDependencies {
     func resolveFetchNewsRepository() -> FetchNewsRepository
 }
 
-class DefaultHomeDependencies: HomeDependencies {
+final class DefaultHomeDependencies: HomeDependencies {
     
     var appDependencies: NewsAppDependencies
     var homeCoordActions: HomeViewCoordinatorActions
     
-    init(appDependencies: NewsAppDependencies, homeCoordActions: HomeViewCoordinatorActions) {
+    init(
+        appDependencies: NewsAppDependencies,
+        homeCoordActions: HomeViewCoordinatorActions
+    ) {
         self.appDependencies = appDependencies
         self.homeCoordActions = homeCoordActions
     }
@@ -31,7 +34,7 @@ class DefaultHomeDependencies: HomeDependencies {
     }
     
     func resolveFetchNewsUseCase() -> FetchNewsUseCase {
-        return FetchNewsUseCase(dependencies: self, repository: self.resolveFetchNewsRepository())
+        return FetchNewsUseCase(dependencies: self)
     }
     
     func resolveFetchNewsRepository() -> FetchNewsRepository {

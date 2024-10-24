@@ -15,7 +15,7 @@
 		0467F8A82CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8A72CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift */; };
 		0467F8B52CC50E1E00F153CA /* NewsAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B42CC50E1E00F153CA /* NewsAppCoordinator.swift */; };
 		0467F8B82CC50E9000F153CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B72CC50E9000F153CA /* HomeView.swift */; };
-		0467F8BA2CC5122800F153CA /* BookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B92CC5122800F153CA /* BookMarkView.swift */; };
+		0467F8BA2CC5122800F153CA /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8B92CC5122800F153CA /* BookmarkView.swift */; };
 		0467F8BE2CC512E300F153CA /* DefaultNewsAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8BD2CC512E300F153CA /* DefaultNewsAppDependencies.swift */; };
 		0467F8C02CC5161700F153CA /* NewsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8BF2CC5161700F153CA /* NewsCellView.swift */; };
 		0467F8C22CC516F200F153CA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8C12CC516F200F153CA /* DetailView.swift */; };
@@ -31,8 +31,12 @@
 		0467F8E02CC52EF600F153CA /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */; };
 		0467F8E22CC56FA400F153CA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E12CC56FA400F153CA /* WebView.swift */; };
 		0467F8E42CC5704000F153CA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E32CC5704000F153CA /* ActivityViewController.swift */; };
+		04AE3B8B2CCA8B4900261223 /* BookmarkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE3B8A2CCA8B4900261223 /* BookmarkCoordinator.swift */; };
+		04AE3B8D2CCA8B9100261223 /* DefaultBookmarkDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE3B8C2CCA8B9100261223 /* DefaultBookmarkDependencies.swift */; };
 		04BC88BD2CC95EC3001774EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */; };
 		04BC88BF2CC95F07001774EC /* DefaultHomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */; };
+		04BC88C42CC98669001774EC /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88C32CC98669001774EC /* MockNetworkRequest.swift */; };
+		04BC88C62CC986FE001774EC /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88C52CC986FE001774EC /* MockURLSession.swift */; };
 		04F135142CC7E9770037C9AD /* FetchBookmarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */; };
 		04F135162CC7F2B90037C9AD /* FetchBookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */; };
 		04F135182CC7F4B50037C9AD /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135172CC7F4B50037C9AD /* AddBookmarkViewModel.swift */; };
@@ -89,7 +93,7 @@
 		0467F8A72CC4F18100F153CA /* NewsReaderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsReaderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0467F8B42CC50E1E00F153CA /* NewsAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppCoordinator.swift; sourceTree = "<group>"; };
 		0467F8B72CC50E9000F153CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		0467F8B92CC5122800F153CA /* BookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkView.swift; sourceTree = "<group>"; };
+		0467F8B92CC5122800F153CA /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		0467F8BD2CC512E300F153CA /* DefaultNewsAppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNewsAppDependencies.swift; sourceTree = "<group>"; };
 		0467F8BF2CC5161700F153CA /* NewsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellView.swift; sourceTree = "<group>"; };
 		0467F8C12CC516F200F153CA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -105,8 +109,12 @@
 		0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0467F8E12CC56FA400F153CA /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0467F8E32CC5704000F153CA /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		04AE3B8A2CCA8B4900261223 /* BookmarkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCoordinator.swift; sourceTree = "<group>"; };
+		04AE3B8C2CCA8B9100261223 /* DefaultBookmarkDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBookmarkDependencies.swift; sourceTree = "<group>"; };
 		04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeDependencies.swift; sourceTree = "<group>"; };
+		04BC88C32CC98669001774EC /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
+		04BC88C52CC986FE001774EC /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkUseCase.swift; sourceTree = "<group>"; };
 		04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkRepository.swift; sourceTree = "<group>"; };
 		04F135172CC7F4B50037C9AD /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
@@ -214,14 +222,9 @@
 		0467F89A2CC4F18100F153CA /* NewsReaderAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				04F135462CC83AD60037C9AD /* NewsData.plist */,
-				04F135442CC839BE0037C9AD /* TestUtility.swift */,
-				04F135422CC839570037C9AD /* NewsReaderAppHelper.swift */,
-				04F1353E2CC833470037C9AD /* MockCoreDataUtil.swift */,
-				04F135402CC833A00037C9AD /* MockCoreDataStack.swift */,
-				04F1353C2CC832F90037C9AD /* MockNewsAppDependencies.swift */,
-				04F1353A2CC832CC0037C9AD /* AddBookmarkViewModelTests.swift */,
-				04F135482CC841CD0037C9AD /* DeleteBookmarkViewModelTests.swift */,
+				04BC88C12CC9860F001774EC /* Utility */,
+				04BC88C02CC985F6001774EC /* Persistance */,
+				04BC88C22CC98659001774EC /* Networking */,
 			);
 			path = NewsReaderAppTests;
 			sourceTree = "<group>";
@@ -242,7 +245,7 @@
 				0467F8B72CC50E9000F153CA /* HomeView.swift */,
 				0467F8BF2CC5161700F153CA /* NewsCellView.swift */,
 				0467F8C12CC516F200F153CA /* DetailView.swift */,
-				0467F8B92CC5122800F153CA /* BookMarkView.swift */,
+				0467F8B92CC5122800F153CA /* BookmarkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			children = (
 				0467F8B42CC50E1E00F153CA /* NewsAppCoordinator.swift */,
 				04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */,
+				04AE3B8A2CCA8B4900261223 /* BookmarkCoordinator.swift */,
 			);
 			path = Cordinator;
 			sourceTree = "<group>";
@@ -261,6 +265,7 @@
 			children = (
 				0467F8BD2CC512E300F153CA /* DefaultNewsAppDependencies.swift */,
 				04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */,
+				04AE3B8C2CCA8B9100261223 /* DefaultBookmarkDependencies.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -281,9 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				0467F8C72CC51B3A00F153CA /* FetchNewsViewModel.swift */,
-				04FF520F2CC6DFB800B6F83B /* FetchBookmarksViewModel.swift */,
 				04F135172CC7F4B50037C9AD /* AddBookmarkViewModel.swift */,
 				04F135322CC80D3A0037C9AD /* DeleteBookmarkViewModel.swift */,
+				04FF520F2CC6DFB800B6F83B /* FetchBookmarksViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -292,8 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				0467F8CA2CC51D0800F153CA /* FetchNewsUseCase.swift */,
-				04F1352C2CC7FA940037C9AD /* AddBookmarkUseCase.swift */,
 				04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */,
+				04F1352C2CC7FA940037C9AD /* AddBookmarkUseCase.swift */,
 				04F135342CC80D910037C9AD /* DeleteBookmarkUseCase.swift */,
 			);
 			path = UseCase;
@@ -331,6 +336,37 @@
 				0467F8D92CC5236B00F153CA /* EndPoint.swift */,
 				0467F8DD2CC526C100F153CA /* NErrors.swift */,
 				0467F8DF2CC52EF600F153CA /* NetworkRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		04BC88C02CC985F6001774EC /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				04F135422CC839570037C9AD /* NewsReaderAppHelper.swift */,
+				04F1353E2CC833470037C9AD /* MockCoreDataUtil.swift */,
+				04F135402CC833A00037C9AD /* MockCoreDataStack.swift */,
+				04F1353C2CC832F90037C9AD /* MockNewsAppDependencies.swift */,
+				04F1353A2CC832CC0037C9AD /* AddBookmarkViewModelTests.swift */,
+				04F135482CC841CD0037C9AD /* DeleteBookmarkViewModelTests.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		04BC88C12CC9860F001774EC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				04F135462CC83AD60037C9AD /* NewsData.plist */,
+				04F135442CC839BE0037C9AD /* TestUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		04BC88C22CC98659001774EC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04BC88C32CC98669001774EC /* MockNetworkRequest.swift */,
+				04BC88C52CC986FE001774EC /* MockURLSession.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -529,9 +565,10 @@
 				04FF51FF2CC6D41E00B6F83B /* PopoverListView.swift in Sources */,
 				04F1351F2CC7F7000037C9AD /* NewsApp.xcdatamodeld in Sources */,
 				0467F8B52CC50E1E00F153CA /* NewsAppCoordinator.swift in Sources */,
+				04AE3B8B2CCA8B4900261223 /* BookmarkCoordinator.swift in Sources */,
 				04F135182CC7F4B50037C9AD /* AddBookmarkViewModel.swift in Sources */,
 				04BC88BD2CC95EC3001774EC /* HomeCoordinator.swift in Sources */,
-				0467F8BA2CC5122800F153CA /* BookMarkView.swift in Sources */,
+				0467F8BA2CC5122800F153CA /* BookmarkView.swift in Sources */,
 				04F135302CC809520037C9AD /* BookmarkedNews+CoreDataClass.swift in Sources */,
 				04F135312CC809520037C9AD /* BookmarkedNews+CoreDataProperties.swift in Sources */,
 				04BC88BF2CC95F07001774EC /* DefaultHomeDependencies.swift in Sources */,
@@ -544,6 +581,7 @@
 				0467F8D32CC5229A00F153CA /* FetchNewsService.swift in Sources */,
 				0467F88B2CC4F17E00F153CA /* NewsReaderApp.swift in Sources */,
 				04F135142CC7E9770037C9AD /* FetchBookmarkUseCase.swift in Sources */,
+				04AE3B8D2CCA8B9100261223 /* DefaultBookmarkDependencies.swift in Sources */,
 				04FF52092CC6DD1F00B6F83B /* CoreDataStack.swift in Sources */,
 				04FF51FB2CC6BC0100B6F83B /* StringConstants.swift in Sources */,
 				0467F8DE2CC526C100F153CA /* NErrors.swift in Sources */,
@@ -556,11 +594,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BC88C42CC98669001774EC /* MockNetworkRequest.swift in Sources */,
 				04F1353F2CC833470037C9AD /* MockCoreDataUtil.swift in Sources */,
 				04F135492CC841CD0037C9AD /* DeleteBookmarkViewModelTests.swift in Sources */,
 				04F1353D2CC832F90037C9AD /* MockNewsAppDependencies.swift in Sources */,
 				04F135452CC839BE0037C9AD /* TestUtility.swift in Sources */,
 				04F1353B2CC832CC0037C9AD /* AddBookmarkViewModelTests.swift in Sources */,
+				04BC88C62CC986FE001774EC /* MockURLSession.swift in Sources */,
 				04F135412CC833A00037C9AD /* MockCoreDataStack.swift in Sources */,
 				04F135432CC839570037C9AD /* NewsReaderAppHelper.swift in Sources */,
 			);

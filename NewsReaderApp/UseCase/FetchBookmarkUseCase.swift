@@ -10,8 +10,8 @@ import Foundation
 class FetchBookmarkUseCase {
     private let repository: FetchBookmarkRepository
     
-    init(dependencies: NewsAppDependencies, repository: FetchBookmarkRepository) {
-        self.repository = repository
+    init(dependencies: NewsAppDependencies) {
+        self.repository = dependencies.resolveFetchBookmarkRepository()
     }
     
     func fetchBookmarks() -> [BookmarkedNews] {

@@ -13,9 +13,9 @@ class FetchBookmarkRepository {
     private let dependencies: NewsAppDependencies
     private let storage: StorageProtocol.Type
     
-    init(dependencies: NewsAppDependencies, storage: StorageProtocol.Type) {
+    init(dependencies: NewsAppDependencies) {
         self.dependencies = dependencies
-        self.storage = storage
+        self.storage = dependencies.resolveStorage()
     }
     
     func fetchBookmarks() -> [BookmarkedNews] {

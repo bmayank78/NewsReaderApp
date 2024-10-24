@@ -11,7 +11,7 @@ import SwiftUI
 
 final class FetchNewsViewModel: ObservableObject {
     private let fetchNewsUseCase: FetchNewsUseCase
-    private  let dependencies: DefaultHomeDependencies
+    private  let dependencies: HomeDependencies
     @Published private var newsResults: [NewsModelDTO] = []
     @Published var filteredNewsResults: [NewsModelDTO] = []
     @Published var allCategories: [String] = []
@@ -23,7 +23,7 @@ final class FetchNewsViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     private var cancellable = Set<AnyCancellable>()
     
-    init(dependencies: DefaultHomeDependencies) {
+    init(dependencies: HomeDependencies) {
         self.dependencies = dependencies
         self.fetchNewsUseCase = dependencies.resolveFetchNewsUseCase()
     }

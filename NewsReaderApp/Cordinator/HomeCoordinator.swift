@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class HomeCoordinator: Coordinator {
+final class HomeCoordinator: Coordinator {
     
     private let appDependencies: NewsAppDependencies
     private lazy var homeDependencies: HomeDependencies = {

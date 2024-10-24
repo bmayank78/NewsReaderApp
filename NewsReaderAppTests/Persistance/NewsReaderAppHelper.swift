@@ -18,7 +18,7 @@ final class NewsReaderAppHelper {
         return nil
     }
     
-    static func parseToNewsDTO(newsData: NSDictionary) -> NewsModelDTO {
+    static private func parseToNewsDTO(newsData: NSDictionary) -> NewsModelDTO {
         let newsModelDTO = NewsModelDTO(
             article_id: newsData["article_id"] as? String,
             title: newsData["title"] as? String,

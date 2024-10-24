@@ -19,7 +19,6 @@ struct HomeView: View {
         self.fetchNewsViewModel = dependencies.resolveFetchNewsViewModel()
         self.addBookmarkViewModel = dependencies.appDependencies.resolveAddBookmarksViewModel()
         self.deleteBookmarkViewModel = dependencies.appDependencies.resolveDeleteBookmarksViewModel()
-        self.fetchNewsViewModel.fetchNews()
     }
     
     var body: some View {
@@ -64,6 +63,9 @@ struct HomeView: View {
                     }
                 }
             })
+            .onAppear {
+                self.fetchNewsViewModel.fetchNews()
+            }
         }
     }
 }

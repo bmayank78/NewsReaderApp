@@ -20,7 +20,7 @@ public class FetchNewsService {
         
         return Future { promise in
             //TODO: instead of passing end point we should pass url request
-            self.dataManager.fetch(endpoint: .fetchNews) { (response: NewsData?, error) in
+            self.dataManager.executeRequest(endpoint: .fetchNews) { (response: NewsData?, error) in
                 guard error == nil else {
                     promise(.failure(.unknownError))
                     return

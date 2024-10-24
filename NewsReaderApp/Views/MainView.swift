@@ -20,7 +20,7 @@ struct MainView: View {
                 }
                 .tag(BottomTabBar.home)
 
-            BookMarkView(dependencies: coordinator.appDependencies)
+            coordinator.bookmarkCoordinator.start()
                 .tabItem {
                     Label(StringConstants.MainViewConstants.bottomBarBookMarkTitle, systemImage: "bookmark")
                 }

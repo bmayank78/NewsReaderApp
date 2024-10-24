@@ -16,16 +16,12 @@ final class MockNewsAppDependencies: NewsAppDependencies {
     
     //MARK: - Fetch bookmarks dependencies
     
-    func resolveFetchBookmarksViewModel() -> FetchBookmarksViewModel {
-        return FetchBookmarksViewModel(dependencies: self)
-    }
-    
     func resolveFetchBookmarksUseCase() -> FetchBookmarkUseCase {
-        return FetchBookmarkUseCase(dependencies: self, repository: self.resolveFetchBookmarkRepository())
+        return FetchBookmarkUseCase(dependencies: self)
     }
     
     func resolveFetchBookmarkRepository() -> FetchBookmarkRepository {
-        return FetchBookmarkRepository(dependencies: self, storage: self.resolveStorage())
+        return FetchBookmarkRepository(dependencies: self)
     }
     
     //MARK: - Add bookmarks dependencies
@@ -49,7 +45,7 @@ final class MockNewsAppDependencies: NewsAppDependencies {
     }
     
     func resolveDataManager() -> DataManager {
-        return DataManager(networking: NetworkRequest())
+        return DataManager(networking: MockNetworkRequest(session: MockURLSession()))
     }
     
     func getInitialTab() -> BottomTabBar {

@@ -1,26 +1,21 @@
 //
-//  NetworkRequest.swift
-//  NewsReaderApp
+//  MockNetworkRequest.swift
+//  NewsReaderAppTests
 //
-//  Created by Mayank  Bajpai on 20/10/24.
+//  Created by Mayank  Bajpai on 24/10/24.
 //
 
 import Foundation
+@testable import NewsReaderApp
 
-protocol Networking {
-    func request(endpoint: EndPoint, completion: @escaping (Data?, NErrors?) -> Void)
-}
-
-public struct NetworkRequest: Networking {
+struct MockNetworkRequest: Networking {
    
     var session: URLSession
     
-    public init(session: URLSession = URLSession.shared) {
+    public init(session: URLSession) {
         self.session = session
     }
-    
-    // var sharedSession: URLSession { return URLSession.shared }
-    
+        
     func request(endpoint: EndPoint, completion: @escaping (Data?, NErrors?) -> Void) {
             guard let url = URL(string: endpoint.url) else {
                 completion(nil, .unknownError)
@@ -38,23 +33,9 @@ public struct NetworkRequest: Networking {
                         completion(nil, .unknownError)
                         return
                     }
-                    // printJSON(from: data)
                     completion(data, nil)
                 }
             }
             dataTask.resume()
-    }
-    
-    
-    func printJSON(from data: Data) {
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                print(json)
-            } else {
-                print("Failed to cast JSON as dictionary")
-            }
-        } catch {
-            print("Error serializing JSON: \(error.localizedDescription)")
-        }
     }
 }
