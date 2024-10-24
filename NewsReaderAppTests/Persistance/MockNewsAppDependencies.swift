@@ -45,7 +45,7 @@ final class MockNewsAppDependencies: NewsAppDependencies {
     }
     
     func resolveDataManager() -> DataManager {
-        return DataManager(networking: MockNetworkRequest(session: MockURLSession()))
+        return DataManager(networking: NetworkRequest(session: MockURLSession()))
     }
     
     func getInitialTab() -> BottomTabBar {

@@ -33,9 +33,9 @@
 		0467F8E42CC5704000F153CA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467F8E32CC5704000F153CA /* ActivityViewController.swift */; };
 		04AE3B8B2CCA8B4900261223 /* BookmarkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE3B8A2CCA8B4900261223 /* BookmarkCoordinator.swift */; };
 		04AE3B8D2CCA8B9100261223 /* DefaultBookmarkDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE3B8C2CCA8B9100261223 /* DefaultBookmarkDependencies.swift */; };
+		04AE3B8F2CCAD4FD00261223 /* FetchNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE3B8E2CCAD4FD00261223 /* FetchNewsTests.swift */; };
 		04BC88BD2CC95EC3001774EC /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */; };
 		04BC88BF2CC95F07001774EC /* DefaultHomeDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */; };
-		04BC88C42CC98669001774EC /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88C32CC98669001774EC /* MockNetworkRequest.swift */; };
 		04BC88C62CC986FE001774EC /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC88C52CC986FE001774EC /* MockURLSession.swift */; };
 		04F135142CC7E9770037C9AD /* FetchBookmarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */; };
 		04F135162CC7F2B90037C9AD /* FetchBookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */; };
@@ -111,9 +111,9 @@
 		0467F8E32CC5704000F153CA /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		04AE3B8A2CCA8B4900261223 /* BookmarkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCoordinator.swift; sourceTree = "<group>"; };
 		04AE3B8C2CCA8B9100261223 /* DefaultBookmarkDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBookmarkDependencies.swift; sourceTree = "<group>"; };
+		04AE3B8E2CCAD4FD00261223 /* FetchNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchNewsTests.swift; sourceTree = "<group>"; };
 		04BC88BC2CC95EC3001774EC /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		04BC88BE2CC95F07001774EC /* DefaultHomeDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeDependencies.swift; sourceTree = "<group>"; };
-		04BC88C32CC98669001774EC /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 		04BC88C52CC986FE001774EC /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		04F135132CC7E9770037C9AD /* FetchBookmarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkUseCase.swift; sourceTree = "<group>"; };
 		04F135152CC7F2B90037C9AD /* FetchBookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBookmarkRepository.swift; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 		04BC88C22CC98659001774EC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				04BC88C32CC98669001774EC /* MockNetworkRequest.swift */,
 				04BC88C52CC986FE001774EC /* MockURLSession.swift */,
+				04AE3B8E2CCAD4FD00261223 /* FetchNewsTests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -594,11 +594,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BC88C42CC98669001774EC /* MockNetworkRequest.swift in Sources */,
 				04F1353F2CC833470037C9AD /* MockCoreDataUtil.swift in Sources */,
 				04F135492CC841CD0037C9AD /* DeleteBookmarkViewModelTests.swift in Sources */,
 				04F1353D2CC832F90037C9AD /* MockNewsAppDependencies.swift in Sources */,
 				04F135452CC839BE0037C9AD /* TestUtility.swift in Sources */,
+				04AE3B8F2CCAD4FD00261223 /* FetchNewsTests.swift in Sources */,
 				04F1353B2CC832CC0037C9AD /* AddBookmarkViewModelTests.swift in Sources */,
 				04BC88C62CC986FE001774EC /* MockURLSession.swift in Sources */,
 				04F135412CC833A00037C9AD /* MockCoreDataStack.swift in Sources */,
