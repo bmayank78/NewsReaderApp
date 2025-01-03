@@ -25,6 +25,10 @@ final class NewsAppCoordinator: Coordinator, ObservableObject {
         self.selectedTab = self.appDependencies.getInitialTab()
         self.homeCoordinator = HomeCoordinator(appDependencies: self.appDependencies)
         self.bookmarkCoordinator = BookmarkCoordinator(appDependencies: self.appDependencies)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute: {
+            self.goToTab(.bookmark)
+        })
     }
     
     func start() -> AnyView {

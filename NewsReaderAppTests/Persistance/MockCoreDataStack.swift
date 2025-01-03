@@ -17,6 +17,8 @@ class MockCoreDataStack {
         let container = NSPersistentContainer(name: "NewsApp")
         let description = NSPersistentStoreDescription()
         description.url = URL(fileURLWithPath: "/dev/null")
+        // TODO: memeory type should be in memory
+        description.type = NSInMemoryStoreType
         container.persistentStoreDescriptions = [description]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

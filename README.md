@@ -3,7 +3,7 @@
 Functional Overview:
 
 1. App will start from the Main / tab bar screen
-2. Main screen contains 2 tabs - New List Screen, Bookmarks Screen
+2. Main screen contains 2 tabs - News List Screen, Bookmarks Screen
 3. News List Screen - provide below features
     3.1 display news list fetched from the public API (News API). Each news item displays title, summary and category
     3.2 Bookmarking/Unmarking news articles.

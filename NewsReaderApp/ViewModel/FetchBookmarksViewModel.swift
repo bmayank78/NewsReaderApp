@@ -13,6 +13,7 @@ import SwiftUI
 class FetchBookmarksViewModel: ObservableObject {
     let fetchBookmarkUseCase: FetchBookmarkUseCase
     let dependencies: BookmarkDependencies
+    //TODO: we should use presentation models instead of DTO models
     @Published var bookmarkedNewsResults: [NewsModelDTO] = []
     
     init(dependencies: BookmarkDependencies) {

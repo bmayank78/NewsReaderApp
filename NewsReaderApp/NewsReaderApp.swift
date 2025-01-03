@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct NewsReaderApp: App {
     
-    @StateObject private var mainCoordinator = NewsAppCoordinator()
+    // @StateObject private var mainCoordinator = NewsAppCoordinator()
     
     var body: some Scene {
         WindowGroup {
-            mainCoordinator.start()
+            NewsAppCoordinator().start()
         }
     }
 }
